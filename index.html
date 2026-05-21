@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxAura | Modă premium</title>
+  <style>
+    :root {
+      --bg: #080707;
+      --text: #f5f0eb;
+      --muted: #c3b9af;
+      --accent: #d4af7f;
+      --border: rgba(212, 175, 127, 0.2);
+      --shadow: 0 30px 80px rgba(0,0,0,.35);
+      font-family: "Inter", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0b0908 0%, #1b1918 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      letter-spacing: 0.18rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: var(--muted);
+      margin-left: 28px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      max-width: 680px;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+
+    .hero .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .hero .btn:hover {
+      background: rgba(212, 175, 127, .12);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 520px;
+      background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67ddbf?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8,7,7,.05), rgba(8,7,7,.9));
+    }
+
+    .highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 80px 0 32px;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,127,.35);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 16px;
+      font-size: 1.15rem;
+    }
+
+    .card-content p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+    }
+
+    .card-content span {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 18px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 16px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">LuxAura</div>
+      <nav>
+        <a href="#colectie">Colecție</a>
+        <a href="#noutati">Noutăți</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="highlight">Ediție limitată</div>
+        <h1>Ținute rafinate pentru un stil care inspiră eleganță.</h1>
+        <p>Descoperă o selecție de piese premium cu design modern, croieli impecabile și materiale atent alese.</p>
+        <a class="btn" href="#colectie">Explorează colecția</a>
+      </div>
+      <div class="hero-image"></div>
+    </section>
+
+    <div class="section-title">Colecție selectă</div>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddbf?auto=format&fit=crop&w=900&q=80" alt="Rochie elegantă">
+        <div class="card-content">
+          <h3>Rochie Satin</h3>
+          <p>O rochie fluidă, ideală pentru evenimente sofisticate și seri deosebite.</p>
+          <span>Premium</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Palton de lux">
+        <div class="card-content">
+          <h3>Palton Noir</h3>
+          <p>Un element de garderobă atemporal, cu linii curate și textură rafinată.</p>
+          <span>Exclusiv</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=900&q=80" alt="Set elegant">
+        <div class="card-content">
+          <h3>Set Tailored</h3>
+          <p>Costum cu croială modernă, ideal pentru un look sofisticat și confortabil.</p>
+          <span>Contemporan</span>
+        </div>
+      </article>
+    </div>
+
+    <footer id="contact">
+      <p>LuxAura — modă premium pentru cei care apreciază eleganța.</p>
+      <p>contact@luxaura.ro</p>
+    </footer>
+  </div>
+</body>
+</html>
