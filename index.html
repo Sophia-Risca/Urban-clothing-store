@@ -6,12 +6,16 @@
   <title>LuxAura | Modă premium</title>
   <style>
     :root {
-      --bg: #080707;
-      --text: #f5f0eb;
-      --muted: #c3b9af;
-      --accent: #d4af7f;
-      --border: rgba(212, 175, 127, 0.2);
-      --shadow: 0 30px 80px rgba(0,0,0,.35);
+      --bg-1: #fbf7f1;
+      --bg-2: #f1e6d9;
+      --bg: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      --text: #191712;
+      --muted: #6b655d;
+      --beige: #f5efe6;
+      --gold: #d4af37;
+      --accent: var(--gold);
+      --border: rgba(212, 175, 55, 0.18);
+      --shadow: 0 30px 80px rgba(0,0,0,.08);
       font-family: "Inter", "Segoe UI", sans-serif;
     }
 
@@ -22,7 +26,7 @@
     }
 
     body {
-      background: linear-gradient(180deg, #0b0908 0%, #1b1918 100%);
+      background: var(--bg);
       color: var(--text);
       min-height: 100vh;
       line-height: 1.6;
@@ -46,6 +50,7 @@
       letter-spacing: 0.18rem;
       text-transform: uppercase;
       font-weight: 700;
+      color: var(--text);
     }
 
     nav a {
@@ -97,7 +102,7 @@
     }
 
     .hero .btn:hover {
-      background: rgba(212, 175, 127, .12);
+      background: rgba(212, 175, 55, .10);
       transform: translateY(-2px);
     }
 
@@ -114,7 +119,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(8,7,7,.05), rgba(8,7,7,.9));
+      background: linear-gradient(180deg, rgba(25,23,18,.03), rgba(25,23,18,.28));
     }
 
     .highlight {
@@ -132,7 +137,7 @@
       margin: 80px 0 32px;
       text-transform: uppercase;
       letter-spacing: 0.24em;
-      color: var(--muted);
+      color: var(--beige);
       font-size: 0.85rem;
     }
 
@@ -143,7 +148,7 @@
     }
 
     .card {
-      background: rgba(255,255,255,.04);
+      background: rgba(245,239,230,.04);
       border: 1px solid var(--border);
       border-radius: 24px;
       overflow: hidden;
@@ -153,7 +158,7 @@
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: rgba(212,175,127,.35);
+      border-color: rgba(212,175,55,.35);
     }
 
     .card img {
@@ -253,7 +258,7 @@
     <div class="section-title">Colecție selectă</div>
     <div class="cards">
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddbf?auto=format&fit=crop&w=900&q=80" alt="Rochie elegantă">
+        <img src="images/satin-dress.png" alt="Rochie elegantă">
         <div class="card-content">
           <h3>Rochie Satin</h3>
           <p>O rochie fluidă, ideală pentru evenimente sofisticate și seri deosebite.</p>
@@ -262,7 +267,7 @@
       </article>
 
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Palton de lux">
+        <img src="images/palton-noir-optimized.jpg" alt="Palton de lux">
         <div class="card-content">
           <h3>Palton Noir</h3>
           <p>Un element de garderobă atemporal, cu linii curate și textură rafinată.</p>
@@ -271,11 +276,47 @@
       </article>
 
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=900&q=80" alt="Set elegant">
+        <img src="images/set-tailored.pgn" alt="Set elegant">
         <div class="card-content">
           <h3>Set Tailored</h3>
           <p>Costum cu croială modernă, ideal pentru un look sofisticat și confortabil.</p>
           <span>Contemporan</span>
+        </div>
+      </article>
+      
+      <article class="card">
+        <img src="images/jacheta-bombler.png" alt="Jachetă bomber">
+        <div class="card-content">
+          <h3>Jachetă Bomber</h3>
+          <p>Jachetă ușoară cu detalii minimaliste, perfectă pentru tranziții sezoane.</p>
+          <span>Urban</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1520975916370-6d7f8c3d1a9d?auto=format&fit=crop&w=900&q=80" alt="Trench clasic">
+        <div class="card-content">
+          <h3>Trench Clasic</h3>
+          <p>Trench elegant, croială clasică și finisaje premium pentru zile ploioase.</p>
+          <span>Timeless</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=900&q=80" alt="Pulover cashmere">
+        <div class="card-content">
+          <h3>Pulover Cashmere</h3>
+          <p>Pulover moale, călduros și delicat, ideal pentru layering rafinat.</p>
+          <span>Lux</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=900&q=80" alt="Pantofi oxford">
+        <div class="card-content">
+          <h3>Pantofi Oxford</h3>
+          <p>Pantofi eleganți cu talpă fină și detalii lucrate manual.</p>
+          <span>Artizan</span>
         </div>
       </article>
     </div>
